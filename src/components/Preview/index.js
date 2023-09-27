@@ -37,7 +37,7 @@ function Preview() {
         </div>
         <div
           className="polaris-card-section"
-          style={{ background: selectedColor }}
+          style={{ background: selectedColor, marginTop: '50px' }}
         >
           <div
             className="react-resizable"

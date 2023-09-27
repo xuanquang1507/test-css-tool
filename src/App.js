@@ -1,12 +1,11 @@
 import React from "react";
-import PolarisPageContent from "./components/PolarisPageContent";
-import NavBar from "./components/NavBar";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
 function App() {
   return (
     <div className="App">
-      {/* <NavBar />
-      <PolarisPageContent /> */}
+      <RouterProvider router={router} />
     </div>
   );
 }

@@ -9,14 +9,20 @@ function Generator() {
   const [spread, setSpread] = useState(7);
   const [blur, setBlur] = useState(4);
   const [opacity, setOpacity] = useState(20);
-  const [selectedColor, setSelectedColor] = useState("#ffffff");
+  const [selectedColor, setSelectedColor] = useState("#000000");
   const [boxShadowValue, setBoxShadowValue] = useState("");
   const [layers, setLayers] = useState([]);
 
   useEffect(() => {
     // Update the box-shadow whenever boxShadowColor changes
-    updateCssValue(shiftRight, shiftDown, spread, blur, opacity);
-  }, [shiftRight, shiftDown, spread, blur, opacity]);
+    updateCssValue(shiftRight, shiftDown, spread, blur, opacity, selectedColor);
+  }, [shiftRight, shiftDown, spread, blur, opacity, selectedColor]);
+
+  const handleColorChange = (e) => {
+    const newColor = e.target.value;
+    setSelectedColor(newColor);
+    updateCssValue(shiftRight, shiftDown, spread, blur, opacity, newColor);
+  };
 
   const handleShiftRight = (e) => {
     const newValue = e.target.value;
@@ -77,17 +83,22 @@ function Generator() {
     setLayers(updatedLayers);
   };
 
-  const updateCssValue = (shiftRight, shiftDown, spread, blur, opacity) => {
-    const boxShadowValue = `${shiftRight}px ${shiftDown}px ${spread}px ${blur}px rgba(0, 0, 0, ${
-      opacity / 100
-    })`;
-
-    setBoxShadowValue(boxShadowValue);
-    const cssValueInput = document.querySelector(".css-value");
-    cssValueInput.value = boxShadowValue;
-    const box = document.querySelector(".react-resizable");
-    box.style.boxShadow = boxShadowValue;
+  const updateCssValue = (shiftRight, shiftDown, spread, blur, opacity, color) => {
+    if (color) {
+      const red = parseInt(color.slice(1, 3), 16);
+      const green = parseInt(color.slice(3, 5), 16);
+      const blue = parseInt(color.slice(5, 7), 16);
+      
+      const boxShadowValue = `${shiftRight}px ${shiftDown}px ${spread}px ${blur}px rgba(${red}, ${green}, ${blue}, ${opacity / 100})`;
+  
+      setBoxShadowValue(boxShadowValue);
+      const cssValueInput = document.querySelector(".css-value");
+      cssValueInput.value = boxShadowValue;
+      const box = document.querySelector(".react-resizable");
+      box.style.boxShadow = boxShadowValue;
+    }
   };
+  
 
   return (
     <div className="polaris-layout">
@@ -153,7 +164,7 @@ function Generator() {
                 className="color"
                 type="color"
                 value={selectedColor}
-                readOnly
+                onChange={handleColorChange}
               />
             </div>
           </div>
@@ -172,7 +183,11 @@ function Generator() {
           </Button>
           <ul className="layer_wrap">
             {layers.map((layer, index) => (
-              <li className="layer_current" key={index} onClick={() => handleLayerClick(index)}>
+              <li
+                className="layer_current"
+                key={index}
+                onClick={() => handleLayerClick(index)}
+              >
                 <span>
                   <MenuOutlined />
                 </span>

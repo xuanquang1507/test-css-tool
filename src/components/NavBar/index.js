@@ -1,17 +1,25 @@
 import React from "react";
 import './navbar.css'
+import { useNavigate } from "react-router-dom";
 function NavBar() {
+    const navigate = useNavigate()
+    const handleClick = () => {
+        navigate('/textShadown')
+    }
+    const handleClickBox = () => {
+        navigate('/')
+    }
   return (
     <>
      <header>
-        <div className="header-nav" >
+        <div className="header-nav">
             <div className="menu-header ">
                 <ul className="list-header">
-                    <li >
-                        <a className="menu-link">Box shadow</a>
+                    <li>
+                        <a className="menu-link" onClick={handleClickBox}>Box shadow</a>
                     </li>
                     <li>
-                        <a className="menu-link">Text shadow</a>
+                        <a className="menu-link" onClick={handleClick}>Text shadow</a>
                     </li>
                     <li>
                         <a className="menu-link">Border</a>
