@@ -1,0 +1,37 @@
+
+header{
+    background-color: #ffffff;
+    margin-top: 2rem;
+}
+
+.header-nav{
+    padding: 20px 0;
+}
+
+.menu-header{
+
+}
+
+.list-header{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-link{
+    display: block;
+    padding: 3px 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all .3s;
+}
+
+.menu-link:hover{
+    color: rgb(44, 78, 188);
+    cursor: pointer;
+}

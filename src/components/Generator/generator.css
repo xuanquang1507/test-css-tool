@@ -1,0 +1,79 @@
+.polaris-layout{
+    max-width: calc(100% - 2rem);
+    margin-top: 2rem;
+}
+
+.polaris-card{
+    background-color: var(--p-surface,#fff);
+    box-shadow: var(--p-card-shadow,0 0 0 1px rgba(63,63,68,.05),0 1px 3px 0 rgba(63,63,68,.15));
+    outline: 0.1rem solid transparent;
+}
+
+.polaris-card-header{
+    padding: 2rem 2rem 0;
+}
+
+.polaris-heading{
+    font-weight: 600;
+    line-height: 2.4rem;
+    margin: 0;
+}
+
+.polaris-card-section{
+    padding: 2rem;
+}
+
+.olaris-formlayout{
+    margin-top: -1.6rem;
+    margin-left: -2rem;
+}
+
+.polaris-formlayout--item{
+    flex: 1 1 22rem;
+    margin-top: 1.6rem;
+    margin-left: 2rem;
+    max-width: calc(100% - 2rem);
+}
+
+.box input{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.color{
+    display: block;
+    cursor: pointer;
+    width: 40px !important;
+    height: 24px !important;
+    border: 1px solid #dfe3e8;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.layer_wrap{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.layer_current{
+    color: #060000;
+    cursor: all-scroll;
+    padding: 10px 10px 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.layer_current:hover {
+    background-color: blue;
+    color: white;
+}
+  
+.action {
+    margin-left: auto; /* Đẩy phần tử này lên cạnh phải của mục danh sách */
+}
+
+
