@@ -12,7 +12,7 @@ export default function TextShadow() {
   const [selectedColor, setSelectedColor] = useState("#ffffff");
   const [boxShadowValue, setBoxShadowValue] = useState("");
   const [layers, setLayers] = useState([]);
-  const [selectedColorChildren, setSelectedColorChildren] = useState("#00FFFF");
+  const [selectedColorChildren, setSelectedColorChildren] = useState("#FF0000");
 
   useEffect(() => {
     updateBoxShadowValue();
@@ -212,7 +212,7 @@ export default function TextShadow() {
                 className="preview-text"
                 style={{ textShadow: boxShadowValue, color: selectedColorChildren }}
               >
-                Xuân Quảng
+                Thúy Hằng
               </div>
             </div>
           </div>
