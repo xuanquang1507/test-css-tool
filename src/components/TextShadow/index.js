@@ -87,7 +87,7 @@ export default function TextShadow() {
   };
 
   return (
-    <>
+    <div className="container">
       <NavBar />
       <div className="text-shadown row">
         <div id="polaris-layout-text" className="polaris-layout col-6">
@@ -225,6 +225,6 @@ export default function TextShadow() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
