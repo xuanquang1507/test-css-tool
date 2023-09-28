@@ -9,10 +9,10 @@ function PolarisPageContent() {
       <NavBar />
       <div className="container">
         <div className="row">
-          <div className="col-6">
+          <div className="col-xl-6 col-12">
             <Generator />
           </div>
-          <div className="col-6">
+          <div className="col-xl-6 col-12">
             <Preview />
           </div>
         </div>

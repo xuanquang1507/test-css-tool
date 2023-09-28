@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./generator.css";
 import { Button } from "antd";
 import { MenuOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import CssCode from "../CssCode";
 
 function Generator() {
   const [shiftRight, setShiftRight] = useState(0);

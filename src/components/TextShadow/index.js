@@ -90,7 +90,7 @@ export default function TextShadow() {
     <div className="container">
       <NavBar />
       <div className="text-shadown row">
-        <div id="polaris-layout-text" className="polaris-layout col-6">
+        <div id="polaris-layout-text" className="polaris-layout col-xl-6 col-12">
           <div className="polaris-card">
             <div className="polaris-card-header">
               <h2 className="polaris-heading">Text-Shadow CSS Generator</h2>
@@ -198,7 +198,7 @@ export default function TextShadow() {
             ></div>
           </div>
         </div>
-        <div className="polaris-layout col-6">
+        <div className="polaris-layout col-xl-6 col-12">
           <div className="polaris-card">
             <div className="polaris-card-header">
               <h2 className="polaris-heading">Preview</h2>
