@@ -212,7 +212,7 @@ export default function TextShadow() {
                 className="preview-text"
                 style={{ textShadow: boxShadowValue, color: selectedColorChildren }}
               >
-                Thúy Hằng
+                Xuân Quảng
               </div>
             </div>
           </div>
