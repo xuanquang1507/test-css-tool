@@ -156,6 +156,20 @@ export default function TextShadow() {
             Add Layer
           </Button>
           <ul className="layer_wrap">
+          <li className="layer_current">
+              <span>
+                <MenuOutlined />
+              </span>
+              <span className="show-shadown">{boxShadowValue}</span>
+              <div>
+                <span className="action mx-3">
+                  <EditOutlined />
+                </span>
+                <span className="action">
+                  <DeleteOutlined onClick={handleDeleteLayer} />
+                </span>
+              </div>
+            </li>
             {layers.map((layer, index) => (
               <li
                 className="layer_current"

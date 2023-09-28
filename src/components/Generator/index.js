@@ -83,14 +83,23 @@ function Generator() {
     setLayers(updatedLayers);
   };
 
-  const updateCssValue = (shiftRight, shiftDown, spread, blur, opacity, color) => {
+  const updateCssValue = (
+    shiftRight,
+    shiftDown,
+    spread,
+    blur,
+    opacity,
+    color
+  ) => {
     if (color) {
       const red = parseInt(color.slice(1, 3), 16);
       const green = parseInt(color.slice(3, 5), 16);
       const blue = parseInt(color.slice(5, 7), 16);
-      
-      const boxShadowValue = `${shiftRight}px ${shiftDown}px ${spread}px ${blur}px rgba(${red}, ${green}, ${blue}, ${opacity / 100})`;
-  
+
+      const boxShadowValue = `${shiftRight}px ${shiftDown}px ${spread}px ${blur}px rgba(${red}, ${green}, ${blue}, ${
+        opacity / 100
+      })`;
+
       setBoxShadowValue(boxShadowValue);
       const cssValueInput = document.querySelector(".css-value");
       cssValueInput.value = boxShadowValue;
@@ -98,7 +107,6 @@ function Generator() {
       box.style.boxShadow = boxShadowValue;
     }
   };
-  
 
   return (
     <div className="polaris-layout">
@@ -181,7 +189,23 @@ function Generator() {
           >
             Add Layer
           </Button>
+
           <ul className="layer_wrap">
+            <li className="layer_current">
+              <span>
+                <MenuOutlined />
+              </span>
+              <span className="show-shadown">{boxShadowValue}</span>
+              <div>
+                <span className="action mx-3">
+                  <EditOutlined />
+                </span>
+                <span className="action">
+                  <DeleteOutlined onClick={handleDeleteLayer} />
+                </span>
+              </div>
+            </li>
+
             {layers.map((layer, index) => (
               <li
                 className="layer_current"
